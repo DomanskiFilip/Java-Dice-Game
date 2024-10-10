@@ -71,6 +71,7 @@ public class FilipDomanskiJavaCoursework1 {
             int score = diceThrow();
             // pick a number to be saved as the place you want your score to be placed in
             int ChoosenPlace = choosePlace();
+            
         }
     }
     
