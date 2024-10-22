@@ -26,7 +26,7 @@ public class FilipDomanskiJavaCoursework1 {
         return combined;
     }
 
-     // function asking to enter t to throw dice and validateing if t was entered
+    // function asking to enter t to throw dice and validateing if t was entered
     public static void tToThrow() {
         Scanner input = new Scanner(System.in);
         boolean result;
@@ -65,8 +65,30 @@ public class FilipDomanskiJavaCoursework1 {
         return choosePlace;
     }
     
-    // function that generates table
+    // function that generates and updates table
     public static void generateTable(int[] playerOne, int[] playerTwo,int[] playerThree){
+        // for every collumn check which number is bigger and turn the other to 20
+        for(int j = 0; j >= playerOne.length; j++){
+            if(playerOne[j] > playerTwo[j]){
+                playerTwo[j] = 20;
+            }else{
+                playerOne[j] = 20;
+            }
+            
+            if(playerOne[j] > playerThree[j]){
+                playerThree[j] = 20;
+            }else{
+                playerOne[j] = 20;
+            }
+            
+            if(playerTwo[j] > playerThree[j]){
+                playerThree[j] = 20;
+            }else{
+                playerTwo[j] = 20;
+            } 
+        }
+        
+        // generate table
         System.out.println("--------------------------------------------------------------------");
         System.out.println("|          | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | Scores |");
         System.out.println("| Player 1 | " + format(playerOne[0]) + " | " + format(playerOne[1]) + " | " + format(playerOne[2]) + " | " + format(playerOne[3]) + " | " + format(playerOne[4]) + " | " + format(playerOne[5]) + " | " + format(playerOne[6]) + " | " + format(playerOne[7]) + " | " + format(playerOne[8]) + "  | " + format(playerOne[9]) + "  | " + format(playerOne[10]) + "  |        |");
@@ -77,7 +99,14 @@ public class FilipDomanskiJavaCoursework1 {
 
     // Helper method to format the numbers
     public static String format(int number) {
-        return number == 0 ? " " : String.valueOf(number);
+        String value = String.valueOf(number);
+        if(number == 0){
+            value = " ";
+        }
+        if(number == 20){
+            value = "*";
+        }
+        return value;
     }
     
     public static void main(String[] args) {
