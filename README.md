@@ -1,4 +1,4 @@
-Java Dice Game
+# Java Dice Game
 
 this is a Java terminal based game in ant Java 11
 
