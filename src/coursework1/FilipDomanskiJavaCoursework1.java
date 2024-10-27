@@ -1,4 +1,4 @@
-package src;
+package coursework1;
 
 import java.util.Scanner;
 
